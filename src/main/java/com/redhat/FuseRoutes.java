@@ -28,7 +28,7 @@ public class FuseRoutes extends RouteBuilder {
 				message.setHeader(KafkaConstants.PARTITION_KEY, 0);
 				message.setHeader(KafkaConstants.KEY, "Camel");
 				
-				log.info("###DVB EDIT!!! Sending the following message to Kafka topic: {}", message.getBody(String.class));
+				log.info("###DVB EDIT to logs!!! Sending the following message to Kafka topic: {}", message.getBody(String.class));
 			}
 		}).recipientList(simple("kafka:${sysenv.KAFKA_BACKEND_TOPIC}?sslTruststoreLocation={{spring.kafka.properties.ssl.truststore.location}}&" 
 	            + "sslTruststorePassword={{spring.kafka.properties.ssl.truststore.password}}&"
